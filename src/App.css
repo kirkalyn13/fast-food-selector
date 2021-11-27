@@ -1,38 +1,170 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: #212121;
+  justify-content: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  display: flex;
+  font-weight: bold;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  min-height: 8vh;
+  background: #F44336;
+  color: #FFF;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: larger;
+  margin-left: 20px;
+  padding:5px;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  min-height: 8vh;
+  background: #F44336;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.container-title{
+  display: flex;
+}
+.logo{
+  margin: 10px 10px 10px 20px;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: bold;
+  margin-left: 2px;
+  padding:2px;
+}
+.login-page{
+  color: black;
+  margin: 50px 20px;
+  align-items: center;
+  flex-direction: column;
+}
+.login-title{
+  width: 100%;
+  align-items: center;
+}
+.input-info-login{
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  color: #757575;
+  align-items: center;
+}
+.input-login{
+  border-radius: 5px;
+  border: solid 2px #212121;
+  padding: 5px 10px 5px 10px;
+  font-size: medium;
+  width: 300px;
+}
+.user-info{
+  display: flex;
+  margin: 2px 20px;
+  justify-content: space-between;
+}
+.btn-login{
+  align-items: center;
+  width: 300px;
+  padding: 10px 20px;
+  margin: 20px 50px;
+  font-size: medium;
+  background-color: #FFC107;
+  color: #000;
+  border-radius : 10px;
+  border: none;
+}
+.btn:hover, .btn:active, .btn-login:active{
+  background-color: #FFA000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.title-text, .title-text-head{
+  margin: 2px;
+  padding: 2px;
+}
+.title-text-head{
+  border-bottom: 1px solid #F5F5F5;
+}
+.dashboard-body{
+  display: flex;
+}
+.container-title{
+  display: flex;
+}
+.container-options{
+  width: 40%;
+  text-align: center;
+  height: 90vh;
+  background-color: antiquewhite;
+}
+.container-foods{
+  width: 60%;
+  overflow-y: scroll;
+  margin: 10px;
+}
+.container-add-food{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-food-list{
+  width: 100%;
+  text-align: center;
+  color: #FFF;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #FFC107;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFA000;
+  border-radius: 10px;
+}
+@media(max-width: 770px){
+  .header{
+    flex-direction: column;
+    font-size: smaller;
   }
-  to {
-    transform: rotate(360deg);
+  .dashboard-body{
+    flex-direction: column;
+  }
+  .container-options{
+    width: 100%;
+    height: 60vh;
+  }
+  .container-foods{
+    margin: 0;
+    width: 100%;
   }
 }
