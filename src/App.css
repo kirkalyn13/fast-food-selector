@@ -28,6 +28,7 @@ body{
   padding:5px;
 }
 .footer {
+  position: inherit;
   display: flex;
   width: 100%;
   bottom: 0;
@@ -42,7 +43,7 @@ body{
   display: flex;
 }
 .logo{
-  margin: 10px 10px 10px 20px;
+  margin: 10px 10px 20px;
 }
 .title{
   display: flex;
@@ -52,53 +53,6 @@ body{
   font-weight: bold;
   margin-left: 2px;
   padding:2px;
-}
-.login-page{
-  color: black;
-  margin: 50px 20px;
-  align-items: center;
-  flex-direction: column;
-}
-.login-title{
-  width: 100%;
-  align-items: center;
-}
-.input-info-login{
-  margin: 20px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-  color: #757575;
-  align-items: center;
-}
-.input-login{
-  border-radius: 5px;
-  border: solid 2px #212121;
-  padding: 5px 10px 5px 10px;
-  font-size: medium;
-  width: 300px;
-}
-.user-info{
-  display: flex;
-  margin: 2px 20px;
-  justify-content: space-between;
-}
-.btn-login{
-  align-items: center;
-  width: 300px;
-  padding: 10px 20px;
-  margin: 20px 50px;
-  font-size: medium;
-  background-color: #FFC107;
-  color: #000;
-  border-radius : 10px;
-  border: none;
-}
-.btn:hover, .btn:active, .btn-login:active{
-  background-color: #FFA000;
-  font-weight: bold;
-  cursor: pointer;
 }
 .title-text, .title-text-head{
   margin: 2px;
@@ -135,6 +89,13 @@ body{
   text-align: center;
   color: #FFF;
 }
+.container-loading{
+  display: flex;
+  width: 100%;
+  padding: 20px 0 50px;
+  justify-content: space-around;
+  color: #FFF;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -156,15 +117,24 @@ body{
     flex-direction: column;
     font-size: smaller;
   }
+  .footer{
+    font-size: smaller;
+    min-height: 5vh;
+  }
+  .image{
+    display: none;
+  }
   .dashboard-body{
     flex-direction: column;
   }
   .container-options{
     width: 100%;
-    height: 60vh;
+    height: 70%;
+    padding-bottom: 20px;
   }
   .container-foods{
     margin: 0;
     width: 100%;
+    height: 50%;
   }
 }

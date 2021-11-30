@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { FoodsContext, foodsCollectionRef } from '../routes/Dashboard'
+import { FoodsContext, foodsCollectionRef} from '../routes/Dashboard'
 import TextField from '@mui/material/TextField'
 import { Button } from '@mui/material'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
@@ -21,11 +21,12 @@ const inputStyle = {
 }
 
 const AddFood = () => {
-    const {newFood, setNewFood } = useContext(FoodsContext)
+    const {newFood, setNewFood, refresh, setRefresh } = useContext(FoodsContext)
 
     const addFood = async () => {
         await addDoc(foodsCollectionRef, {name: newFood})
         alert(`Added ${newFood}.`)
+        setRefresh(!refresh)
         setNewFood("")
     }
 

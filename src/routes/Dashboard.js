@@ -10,9 +10,12 @@ import Foods from '../components/Foods'
 export const FoodsContext = React.createContext()
 export const foodsCollectionRef = collection(db, "food")
 
+
 const Dashboard = () => {
     const [ foods, setFoods ] = useState([])
     const [ newFood, setNewFood ] = useState('')
+    const [refresh, setRefresh] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const getFoods = async () => {
         try{
@@ -24,12 +27,14 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
+        setTimeout(()=>{
+            setLoading(false)
+          },1000)
         getFoods()
-        console.log(foods)
-    },[foods])
+    },[refresh])
 
     return (
-        <FoodsContext.Provider value={{foods,newFood,setNewFood}}>
+        <FoodsContext.Provider value={{foods,newFood,setNewFood,refresh,setRefresh,loading, setLoading}}>
             <Header />
             <div className="dashboard-body">
                 <Options />

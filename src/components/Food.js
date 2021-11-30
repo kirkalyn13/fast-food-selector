@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FoodsContext } from '../routes/Dashboard'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
@@ -11,15 +12,17 @@ const cardStyle = {
     display: "flex",
     backgroundColor: '#FFECB3', 
     color: '#000', 
-    fontWeight:"bolder", 
+    fontWeight:"300", 
     justifyContent:"space-between",
     margin: "10px",
 }
 
 const Task = ({food, id}) => {
+    const {refresh, setRefresh } = useContext(FoodsContext)
     const deleteFood = async (id) => {
         const foodDoc = doc(db, "food", id)
         await deleteDoc(foodDoc)
+        setRefresh(!refresh)
         alert(`Deleted ${food}.`)
     }
 
